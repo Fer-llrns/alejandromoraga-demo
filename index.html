@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Alejandro Moraga Fisioterapia · Gijón</title>
+<meta name="description" content="Fisioterapia en Gijón. Alejandro te escucha, busca el origen de tu dolor y te trata. Pide tu cita por WhatsApp.">
+<meta name="theme-color" content="#1C2A22">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FAFAF8;--ink:#1C2A22;--green:#4E7A5E;--gold:#C9A96E;--mist:#EEF2EE;--wa:#25D366}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,.serif{font-family:'Playfair Display',Georgia,serif;font-weight:500}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+section{padding:80px 0}
+.eyebrow{font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--green);font-weight:600}
+.sec-title{font-size:clamp(2rem,6vw,3rem);line-height:1.15;margin:8px 0 6px}
+.sec-sub{color:#55645b;font-size:1.05rem}
+.center{text-align:center}
+
+/* NAV */
+nav{position:fixed;inset:0 0 auto 0;z-index:50;transition:.35s;background:rgba(28,42,34,.15);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);color:#fff}
+nav.solid{background:rgba(250,250,248,.96);color:var(--ink);box-shadow:0 2px 20px rgba(0,0,0,.07)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav-logo svg{height:40px;width:auto}
+.nav-links{display:flex;gap:30px;font-size:.92rem;font-weight:500}
+.nav-links a{opacity:.9;transition:.2s}.nav-links a:hover{opacity:1;color:var(--gold)}
+.burger{display:none;background:none;border:0;width:40px;height:40px;cursor:pointer;color:inherit}
+.burger span{display:block;width:24px;height:2px;background:currentColor;margin:5px auto;transition:.3s}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(max-width:760px){
+ .burger{display:block}
+ .nav-links{position:fixed;top:64px;left:0;right:0;flex-direction:column;gap:0;background:var(--bg);color:var(--ink);padding:8px 20px 20px;transform:translateY(-130%);transition:.35s;box-shadow:0 12px 30px rgba(0,0,0,.1)}
+ .nav-links.open{transform:none}
+ .nav-links a{padding:14px 0;border-bottom:1px solid var(--mist);font-size:1.05rem}
+}
+
+/* HERO */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;padding:110px 0 60px;background:#1C2A22 url('https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=1800&q=80') center/cover}
+.hero::before{content:"";position:absolute;inset:0;background:rgba(28,42,34,.7)}
+.hero .wrap{position:relative}
+.hero-logo svg{width:min(300px,78vw);height:auto;margin:0 auto 34px}
+.hero h1{font-style:italic;font-weight:400;font-size:clamp(2.7rem,9vw,5.6rem);line-height:1.08;letter-spacing:-.01em}
+.quote-by{font-size:.85rem;opacity:.75;margin-top:14px}
+.hero-sub{margin-top:26px;font-size:.88rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.8)}
+.cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:32px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 30px;border-radius:10px;font-weight:600;font-size:1rem;border:2px solid transparent;cursor:pointer;transition:.25s}
+.btn:hover{transform:scale(1.02);filter:brightness(1.08)}
+.btn-solid{background:#fff;color:var(--ink)}
+.btn-out{border-color:#fff;color:#fff}
+.btn-out:hover{background:#fff;color:var(--ink)}
+.badge-g{display:inline-block;margin-top:34px;padding:9px 20px;border-radius:99px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);font-size:.9rem;backdrop-filter:blur(6px)}
+.badge-g b{color:var(--gold);letter-spacing:2px;font-weight:400}
+
+/* SOBRE */
+.about-grid{display:grid;gap:44px;align-items:center}
+.about-img{border-radius:18px;overflow:hidden;box-shadow:0 20px 50px rgba(28,42,34,.18);aspect-ratio:4/5}
+.about-img img{width:100%;height:100%;object-fit:cover}
+.about h2{font-size:clamp(2.2rem,6vw,3.2rem);line-height:1.1}
+.about .role{color:var(--green);font-weight:500;margin:6px 0 18px}
+.about p.lead{font-size:1.15rem;color:#33443a}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0}
+.chip{padding:8px 16px;border-radius:99px;background:var(--mist);font-size:.92rem;font-weight:500}
+.chip::before{content:"✔ ";color:var(--green)}
+.auth{display:inline-block;background:#F4EAD3;border:1px solid var(--gold);border-radius:14px;padding:16px 24px;font-size:1.1rem;font-weight:600}
+.auth i{display:block;color:#B08A3E;font-style:normal;letter-spacing:3px;font-size:1.2rem}
+@media(min-width:860px){.about-grid{grid-template-columns:1fr 1fr;gap:70px}}
+
+/* TRATAMIENTOS */
+.treat{background:var(--mist)}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:40px}
+@media(min-width:900px){.cards{grid-template-columns:repeat(4,1fr);gap:20px}}
+.card{background:#fff;border-radius:14px;padding:24px 18px;transition:box-shadow .3s,translate .3s,border-color .3s,background .3s;box-shadow:0 2px 10px rgba(28,42,34,.05)}
+.card:hover{translate:0 -4px;box-shadow:0 16px 34px rgba(28,42,34,.13)}
+.card svg{width:40px;height:40px;stroke:var(--green);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;margin-bottom:14px}
+.card h3{font-family:Inter,sans-serif;font-weight:700;font-size:1.02rem;margin-bottom:4px}
+.card p{font-size:.9rem;color:#5a695f;line-height:1.45}
+.how{margin-top:50px;text-align:center}
+.how h4{font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:var(--green);margin-bottom:16px}
+.how .row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.how span{background:#fff;border:1px solid #d7e1d8;color:var(--ink);padding:9px 16px;border-radius:99px;font-size:.9rem;font-weight:500}
+
+
+.card{border:2px solid transparent;text-align:left;font:inherit;color:inherit;cursor:pointer;position:relative}
+.card.sel{border-color:var(--green);background:#f6faf6}
+.card.sel::after{content:"✔";position:absolute;top:10px;right:12px;width:22px;height:22px;border-radius:50%;background:var(--green);color:#fff;font-size:.72rem;display:grid;place-items:center}
+.triage{max-width:640px;margin:34px auto 0;background:#fff;border-radius:16px;padding:26px;box-shadow:0 10px 36px rgba(28,42,34,.12);border:1px solid #dfe8e0}
+.t-title{font-family:'Playfair Display',serif;font-size:1.4rem;margin-bottom:10px}
+.t-empty{color:#5a695f;font-size:.95rem;margin-bottom:18px}
+.t-group{margin-bottom:14px}.t-group>span{display:block;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--green);font-weight:600;margin-bottom:8px}
+.t-opts{display:flex;flex-wrap:wrap;gap:8px}
+.t-opts button{font:inherit;font-size:.9rem;padding:8px 16px;border-radius:99px;border:1px solid #cdd9cf;background:var(--bg);cursor:pointer;transition:.2s}
+.t-opts button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.t-preview{background:var(--mist);border-radius:10px;padding:14px 16px;font-size:.92rem;font-style:italic;color:#33443a;margin:16px 0 18px}
+.t-send{background:var(--wa);color:#fff;width:100%}
+.t-send svg{width:22px;height:22px;fill:#fff}
+.treat-gap{display:none}
+
+/* SEPARADOR */
+.band{background:var(--ink);color:#fff;text-align:center;padding:100px 0}
+.band h2{font-size:clamp(2rem,6vw,3.6rem);line-height:1.2;max-width:760px;margin:0 auto 30px}
+
+/* RESEÑAS */
+.reviews{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:36px 20px 20px;margin:0 -20px;-webkit-overflow-scrolling:touch}
+.review{flex:0 0 86%;scroll-snap-align:center;background:#fff;border-radius:12px;padding:26px;box-shadow:0 6px 24px rgba(28,42,34,.09)}
+.rev-head{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.avatar{width:44px;height:44px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;font-weight:600;flex:none}
+.rev-name{font-weight:700;line-height:1.25;font-size:.95rem}
+.rev-g{display:flex;align-items:center;gap:5px;font-size:.78rem;color:#777}
+.rev-g svg{width:13px;height:13px}
+.stars{color:var(--gold);letter-spacing:2px;margin-bottom:10px}
+.review p{font-style:italic;color:#33443a;font-size:.97rem}
+.when{margin-top:14px;font-size:.8rem;color:#9aa5a0}
+@media(min-width:860px){.reviews{display:grid;grid-template-columns:1fr 1fr;overflow:visible;margin:0;padding:40px 0 0;gap:22px}.review{flex:none}}
+
+.more-rev{margin-top:26px}.btn-more{border-color:var(--ink);color:var(--ink)}.btn-more:hover{background:var(--ink);color:#fff}
+/* CONTACTO */
+.contact{background:var(--mist)}
+.c-grid{display:grid;gap:36px;margin-top:40px}
+@media(min-width:860px){.c-grid{grid-template-columns:1.1fr .9fr;gap:60px;align-items:start}}
+.info{display:grid;gap:20px}
+.info div{display:flex;gap:14px}
+.info svg{flex:none;width:22px;height:22px;stroke:var(--green);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;margin-top:3px}
+.info small{display:block;color:#5a695f}
+.info a.tel{font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.hours{font-size:.95rem;line-height:1.8}
+.btn-map{align-self:flex-start;margin-top:6px;background:var(--ink);color:#fff;width:fit-content;padding:13px 24px}
+.ctas{display:grid;gap:14px}
+.ctas .btn{width:100%;border-radius:10px;padding:22px 24px;color:#fff;font-size:1.08rem}
+.ctas svg{width:24px;height:24px;fill:#fff}
+
+/* FOOTER */
+footer{background:var(--bg);text-align:center;padding:50px 0 100px;border-top:1px solid #e6ebe6}
+footer .nav-logo svg{height:52px;margin:0 auto 16px}
+.f-links{display:flex;gap:22px;justify-content:center;margin:14px 0;font-size:.9rem;color:#55645b}
+.f-icons{display:flex;gap:16px;justify-content:center;align-items:center;margin:14px 0;font-size:.92rem}
+.f-icons a{display:inline-flex;align-items:center;gap:6px}
+.f-icons svg{width:18px;height:18px}
+.credit{margin-top:18px;font-size:.72rem;color:#c3c9c5}
+
+/* FLOTANTES */
+.fab{position:fixed;bottom:20px;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;z-index:60;box-shadow:0 8px 22px rgba(0,0,0,.28);transition:.25s}
+.fab:hover{transform:scale(1.08)}
+.fab svg{width:28px;height:28px;fill:#fff}
+.fab-wa{right:18px;background:var(--wa);animation:pulse 15s infinite}
+.fab-tel{left:18px;background:var(--ink)}
+.fab::after{content:attr(data-tip);position:absolute;bottom:68px;white-space:nowrap;background:var(--ink);color:#fff;font-size:.78rem;padding:5px 11px;border-radius:6px;opacity:0;pointer-events:none;transition:.2s}
+.fab-wa::after{right:0}.fab-tel::after{left:0}
+.fab:hover::after{opacity:1}
+@keyframes pulse{0%,90%,100%{box-shadow:0 8px 22px rgba(0,0,0,.28),0 0 0 0 rgba(37,211,102,.6)}95%{box-shadow:0 8px 22px rgba(0,0,0,.28),0 0 0 20px rgba(37,211,102,0)}}
+
+/* ANIMACIONES: solo con js-ready */
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.fab-wa{animation:none}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <symbol id="wa" viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.8-2.8-1.5-3.9-3.4-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.6.7.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.2c-1.5 0-2.9-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.200 8.200 0 1 1 12 20.200z"/></symbol>
+ <symbol id="ph" viewBox="0 0 24 24"><path d="M6.6 10.800a15 15 0 0 0 6.600 6.600l2.200-2.200a1 1 0 0 1 1-.25c1.100.37 2.300.57 3.600.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.500a1 1 0 0 1 1 1c0 1.300.2 2.500.57 3.600a1 1 0 0 1-.25 1z"/></symbol>
+ <symbol id="logo" viewBox="0 0 330 96">
+  <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+   <circle cx="46" cy="48" r="40"/>
+   <path d="M46 14c-7 5 7 9 0 14s7 9 0 14 7 9 0 14 7 9 0 14"/>
+   <path d="M38 22h16M36 34h20M35 46h22M36 58h20M38 70h16" stroke-width="1.3"/>
+  </g>
+  <text x="104" y="44" font-family="Inter,sans-serif" font-weight="500" font-size="21" letter-spacing="4.2" fill="currentColor">ALEJANDRO</text>
+  <text x="104" y="68" font-family="Inter,sans-serif" font-weight="500" font-size="21" letter-spacing="4.2" fill="currentColor">MORAGA</text>
+  <text x="104" y="90" font-family="'Playfair Display',serif" font-style="italic" font-size="20" class="logo-sub">Fisioterapia</text>
+ </symbol>
+</svg>
+
+<nav id="nav">
+ <div class="wrap nav-in">
+  <a href="#inicio" class="nav-logo" aria-label="Alejandro Moraga Fisioterapia"><svg class="logo-nav"><use href="#logo"/></svg></a>
+  <div class="nav-links" id="links">
+   <a href="#tratamientos">Tratamientos</a>
+   <a href="#valoraciones">Valoraciones</a>
+   <a href="#contacto">Contacto</a>
+  </div>
+  <button class="burger" id="burger" aria-label="Menú"><span></span><span></span><span></span></button>
+ </div>
+</nav>
+
+<header class="hero" id="inicio">
+ <div class="wrap">
+  <div class="hero-logo h-a" style="color:#fff"><svg viewBox="0 0 330 96"><use href="#logo"/></svg></div>
+  <h1 class="h-b">Busca la raíz<br>del problema</h1>
+  <p class="quote-by h-c">— Jennifer M., paciente en Google</p>
+  <p class="hero-sub h-c">Fisioterapia · Gijón</p>
+  <div class="cta-row h-d">
+   <a class="btn btn-solid" href="https://wa.me/34611823228" target="_blank" rel="noopener">Pide tu cita</a>
+   <a class="btn btn-out" href="#tratamientos">Ver tratamientos</a>
+  </div>
+  <div class="badge-g h-d"><b>★★★★★</b> 5,0 en Google · 13 opiniones</div>
+ </div>
+</header>
+
+<section class="about" id="sobre">
+ <div class="wrap about-grid">
+  <div class="about-img a-l"><img loading="lazy" src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=900&q=80" alt="Manos de fisioterapeuta tratando una espalda"></div>
+  <div class="a-r">
+   <h2>Alejandro Moraga</h2>
+   <p class="role">Fisioterapeuta · Gijón</p>
+   <p class="lead">Te escucha, busca el origen de tu dolor y te trata. En una consulta tranquila y cuidada, en pleno Gijón.</p>
+   <div class="chips"><span class="chip">Atención a domicilio</span><span class="chip">Trato cercano</span></div>
+   <div class="auth"><i>★★★★★</i>5,0 en Google · 13 opiniones</div>
+  </div>
+ </div>
+</section>
+
+<section class="treat" id="tratamientos">
+ <div class="wrap">
+  <div class="center">
+   <h2 class="sec-title">¿Qué te duele?</h2>
+   <p class="sec-sub">Toca lo que te pasa y escríbele en un momento</p>
+  </div>
+  <div class="cards">
+   <button type="button" class="card" aria-pressed="false" data-z="Cefaleas"><svg viewBox="0 0 40 40"><circle cx="20" cy="18" r="11"/><path d="M12 8l-3-3M28 8l3-3M20 6V2M14 30c0 3 2 5 6 5s6-2 6-5"/></svg><h3>Cefaleas</h3><p>Dolor de cabeza que no se va</p></button>
+   <button type="button" class="card" aria-pressed="false" data-z="Cervicalgias"><svg viewBox="0 0 40 40"><circle cx="20" cy="9" r="5"/><path d="M17 15v6M23 15v6M8 36c0-8 5-12 12-12s12 4 12 12"/></svg><h3>Cervicalgias</h3><p>Cuello cargado o rígido</p></button>
+   <button type="button" class="card" aria-pressed="false" data-z="Dorsalgias"><svg viewBox="0 0 40 40"><path d="M6 14c5-4 9-4 14-1 5-3 9-3 14 1M20 13v22M16 19h8M16 25h8M16 31h8"/></svg><h3>Dorsalgias</h3><p>Tensión entre los hombros</p></button>
+   <button type="button" class="card" aria-pressed="false" data-z="Lumbalgias"><svg viewBox="0 0 40 40"><path d="M20 3v34M14 10h12M13 17h14M12 24h16M13 31h14"/><circle cx="20" cy="24" r="14" stroke-dasharray="2 4"/></svg><h3>Lumbalgias</h3><p>Dolor en la parte baja de la espalda</p></button>
+   <button type="button" class="card" aria-pressed="false" data-z="Artrosis"><svg viewBox="0 0 40 40"><path d="M14 4v10c0 3-3 4-3 8s3 5 3 8v6M26 4v10c0 3 3 4 3 8s-3 5-3 8v6"/><circle cx="20" cy="22" r="3"/></svg><h3>Artrosis</h3><p>Articulaciones que duelen al moverte</p></button>
+   <button type="button" class="card" aria-pressed="false" data-z="Patologías articulares"><svg viewBox="0 0 40 40"><circle cx="12" cy="12" r="5"/><circle cx="28" cy="28" r="5"/><path d="M16 16l8 8M5 28h10M25 12h10"/></svg><h3>Patologías articulares</h3><p>Rodillas, hombros y caderas</p></button>
+   <button type="button" class="card" aria-pressed="false" data-z="Fascitis plantar"><svg viewBox="0 0 40 40"><path d="M10 6c0 12 4 18 4 24 0 4 3 5 8 5h10c2 0 3-1 3-3s-1-3-3-3H24c-2 0-3-2-3-4C21 17 17 12 10 6z"/></svg><h3>Fascitis plantar</h3><p>Dolor en la planta del pie</p></button>
+   <button type="button" class="card" aria-pressed="false" data-z="Espolón calcáneo"><svg viewBox="0 0 40 40"><path d="M14 4c-4 10-4 18 0 24 1 3 0 6-4 7h20c-3-1-4-4-3-7 4-6 4-14 0-24"/><path d="M26 32l5 4"/></svg><h3>Espolón calcáneo</h3><p>Dolor en el talón al pisar</p></button>
+  </div>
+  <div class="triage" id="triage">
+   <p class="t-title">Tu mensaje para Alejandro</p>
+   <p class="t-empty" id="tEmpty">Toca arriba lo que te duele. Puedes elegir varias.</p>
+   <div class="t-body" id="tBody" hidden>
+    <div class="t-group"><span>Desde cuándo</span>
+     <div class="t-opts" data-k="when"><button type="button">Hace días</button><button type="button">Semanas</button><button type="button">Meses</button><button type="button">Años</button></div></div>
+    <div class="t-group"><span>Dónde prefieres</span>
+     <div class="t-opts" data-k="where"><button type="button">En consulta</button><button type="button">En mi casa</button></div></div>
+    <p class="t-preview" id="tPrev"></p>
+   </div>
+   <a class="btn t-send" id="tSend" href="https://wa.me/34611823228" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Enviar por WhatsApp</a>
+  </div>
+  <div class="how">
+   <h4>Cómo te trata</h4>
+   <div class="row"><span>Masaje descontracturante</span><span>Masaje de descarga</span><span>Inducción miofascial</span><span>Radiofrecuencia</span><span>Magnetoterapia</span><span>Presoterapia</span></div>
+  </div>
+ </div>
+</section>
+
+<section class="band">
+ <div class="wrap band-in">
+  <h2>¿No puedes venir? Alejandro va a tu casa.</h2>
+  <a class="btn btn-out" href="https://wa.me/34611823228" target="_blank" rel="noopener">Pregúntale por WhatsApp</a>
+ </div>
+</section>
+
+<section id="valoraciones">
+ <div class="wrap">
+  <div class="center">
+   <h2 class="sec-title">Lo que dicen sus pacientes</h2>
+   <p class="sec-sub">Valoraciones reales verificadas en Google</p>
+  </div>
+  <div class="reviews">
+   <article class="review"><div class="rev-head"><div class="avatar">J</div><div><div class="rev-name">Jennifer María Robles San Emeterio</div><div class="rev-g"><svg viewBox="0 0 48 48"><use href="#gg"/></svg>Google</div></div></div><div class="stars">★★★★★</div><p>"Alejandro es un gran profesional, tanto mi pareja como yo vamos a su consulta y es una maravilla, es muy majo y amable, el local está muy bien cuidado, y se interesa mucho por lo que te pasa y buscar la raíz del problema. Te hace sentir cómoda, cosa que para mi es importante. Lo recomiendo sin duda."</p><div class="when">Hace 2 años</div></article>
+   <article class="review"><div class="rev-head"><div class="avatar">J</div><div><div class="rev-name">jose ramon guerrero rodriguez</div><div class="rev-g"><svg viewBox="0 0 48 48"><use href="#gg"/></svg>Google</div></div></div><div class="stars">★★★★★</div><p>"Gran profesional y excelente trato. Me ayudó mucho con mi lesión y el resultado ha sido muy positivo. Sin duda volveré si lo necesito. Muy recomendable."</p><div class="when">Hace 4 meses</div></article>
+   <article class="review"><div class="rev-head"><div class="avatar">A</div><div><div class="rev-name">Ana Alonso Aldama</div><div class="rev-g"><svg viewBox="0 0 48 48"><use href="#gg"/></svg>Google</div></div></div><div class="stars">★★★★★</div><p>"Alejandro es un fisio estupendo!! Puntual, buen profesional y además simpático.<br>Lo recomiendo 100%<br>Gracias!!"</p><div class="when">Hace 7 meses</div></article>
+   <article class="review"><div class="rev-head"><div class="avatar">T</div><div><div class="rev-name">Taba Franchini</div><div class="rev-g"><svg viewBox="0 0 48 48"><use href="#gg"/></svg>Google</div></div></div><div class="stars">★★★★★</div><p>"Alejandro es muy buen profesional, atento con el paciente además de súper simpático. 100% recomendable."</p><div class="when">Hace 2 años</div></article>
+  </div>
+  <p class="center more-rev"><a class="btn btn-more" href="https://www.google.com/maps/search/?api=1&query=Alejandro+Moraga+Fisioterapia+Gij%C3%B3n" target="_blank" rel="noopener">Ver las 13 opiniones en Google →</a></p>
+ </div>
+</section>
+
+<section class="contact" id="contacto">
+ <div class="wrap">
+  <div class="center">
+   <h2 class="sec-title">Pide tu cita</h2>
+   <p class="sec-sub">Escríbele y te busca hueco.</p>
+  </div>
+  <div class="c-grid">
+   <div class="info">
+    <div><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.200-7-11a7 7 0 0 1 14 0c0 4.800-7 11-7 11z"/><circle cx="12" cy="10" r="2.500"/></svg><span>Calle Cienfuegos 5, bajo, Gijón 33205</span></div>
+    <div><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.500 1.500a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><a class="tel" href="tel:+34611823228">611 82 32 28</a></div>
+    <div><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span class="hours">Lunes y miércoles 9:00–13:00 y 16:00–20:00<br>Martes 8:00–14:00<br>Jueves 8:00–16:00<br>Viernes 9:00–13:00 y 16:00–19:00</span></div>
+    <a class="btn btn-map" href="https://maps.google.com/?q=Calle+Cienfuegos+5,+Gijón" target="_blank" rel="noopener">Cómo llegar →</a>
+   </div>
+   <div class="ctas">
+    <a class="btn" style="background:var(--wa)" href="https://wa.me/34611823228" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Escríbele por WhatsApp</a>
+    <a class="btn" style="background:var(--ink)" href="tel:+34611823228"><svg><use href="#ph"/></svg>Llamar: 611 82 32 28</a>
+   </div>
+  </div>
+ </div>
+</section>
+
+<footer>
+ <div class="wrap">
+  <div class="nav-logo"><svg viewBox="0 0 330 96" style="width:auto"><use href="#logo"/></svg></div>
+  <p>© 2026 Alejandro Moraga Fisioterapia — Gijón</p>
+  <div class="f-links"><a href="#tratamientos">Tratamientos</a><a href="#valoraciones">Valoraciones</a><a href="#contacto">Contacto</a></div>
+  <div class="f-icons"><a href="tel:+34611823228"><svg fill="currentColor"><use href="#ph"/></svg>611 82 32 28</a><a href="https://wa.me/34611823228" target="_blank" rel="noopener"><svg fill="currentColor"><use href="#wa"/></svg>WhatsApp</a></div>
+  <p class="credit">Diseño web por Baxia Agency</p>
+ </div>
+</footer>
+
+<a class="fab fab-wa" data-tip="Escríbele" href="https://wa.me/34611823228" target="_blank" rel="noopener" aria-label="WhatsApp"><svg><use href="#wa"/></svg></a>
+<a class="fab fab-tel" data-tip="Llámale" href="tel:+34611823228" aria-label="Llamar"><svg><use href="#ph"/></svg></a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="gg" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.500c3.500 0 6.600 1.200 9.100 3.600l6.800-6.800C35.800 2.400 30.300 0 24 0 14.600 0 6.500 5.400 2.600 13.200l7.900 6.100C12.400 13.600 17.700 9.500 24 9.500z"/><path fill="#4285F4" d="M46.500 24.500c0-1.600-.1-3.100-.4-4.500H24v9h12.700c-.6 3-2.200 5.400-4.700 7.100l7.600 5.900c4.400-4.100 6.900-10.100 6.900-17.500z"/><path fill="#FBBC05" d="M10.500 28.700A14.500 14.500 0 0 1 9.500 24c0-1.600.3-3.200.9-4.700l-7.900-6.100A24 24 0 0 0 0 24c0 3.900.9 7.500 2.600 10.800l7.900-6.100z"/><path fill="#34A853" d="M24 48c6.500 0 11.900-2.100 15.900-5.800l-7.600-5.900c-2.100 1.400-4.900 2.300-8.300 2.300-6.300 0-11.600-4.100-13.500-9.800l-7.900 6.100C6.500 42.600 14.600 48 24 48z"/></symbol></svg>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+ var nav=document.getElementById('nav'),burger=document.getElementById('burger'),links=document.getElementById('links');
+ function onScroll(){nav.classList.toggle('solid',window.scrollY>40)}
+ onScroll();addEventListener('scroll',onScroll,{passive:true});
+ burger.addEventListener('click',function(){burger.classList.toggle('open');links.classList.toggle('open')});
+ links.addEventListener('click',function(e){if(e.target.tagName==='A'){burger.classList.remove('open');links.classList.remove('open')}});
+
+ // color del logo según estado de la barra
+ var st=document.createElement('style');
+ st.textContent='.logo-sub{fill:#9fd0b0}nav.solid .logo-sub,footer .logo-sub{fill:#4E7A5E}nav.solid .logo-nav,footer .nav-logo{color:#1C2A22}';
+ document.head.appendChild(st);
+
+
+ // Triage WhatsApp
+ (function(){
+  var sel=[],opt={when:'',where:''},cards=document.querySelectorAll('.card[data-z]'),
+   body=document.getElementById('tBody'),empty=document.getElementById('tEmpty'),prev=document.getElementById('tPrev'),send=document.getElementById('tSend');
+  function msg(){
+   if(!sel.length)return 'Hola Alejandro, quería pedir cita.';
+   var m='Hola Alejandro, me duele esto: '+sel.join(', ').toLowerCase()+'.';
+   if(opt.when)m+=' Llevo así '+opt.when.toLowerCase()+'.';
+   if(opt.where)m+=' Prefiero '+opt.where.toLowerCase()+'.';
+   return m+' ¿Tienes hueco?';
+  }
+  function upd(){
+   var t=msg();body.hidden=!sel.length;empty.hidden=!!sel.length;prev.textContent='“'+t+'”';
+   send.href='https://wa.me/34611823228?text='+encodeURIComponent(t);
+  }
+  cards.forEach(function(c){c.addEventListener('click',function(){
+   var z=c.dataset.z,i=sel.indexOf(z);
+   if(i>-1)sel.splice(i,1);else sel.push(z);
+   c.classList.toggle('sel',i<0);c.setAttribute('aria-pressed',i<0);upd();
+  })});
+  document.querySelectorAll('.t-opts').forEach(function(g){g.addEventListener('click',function(e){
+   var b=e.target.closest('button');if(!b)return;var k=g.dataset.k,on=b.classList.contains('on');
+   g.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});
+   opt[k]=on?'':b.textContent;if(!on)b.classList.add('on');upd();
+  })});
+  upd();
+ })();
+ if(!window.gsap||!window.ScrollTrigger||matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+ gsap.registerPlugin(ScrollTrigger);
+ document.body.classList.add('js-ready');
+ var E='power2.out',S='top 80%';
+ gsap.from('.h-a',{opacity:0,scale:.85,duration:.8,ease:E});
+ gsap.from('.h-b',{opacity:0,y:40,duration:.6,ease:E,delay:.8});
+ gsap.from('.h-c,.h-d',{opacity:0,y:20,duration:.6,ease:E,stagger:.2,delay:1.2});
+ gsap.from('.a-l',{opacity:0,x:-60,duration:.8,ease:E,scrollTrigger:{trigger:'.about',start:S}});
+ gsap.from('.a-r',{opacity:0,x:60,duration:.8,ease:E,scrollTrigger:{trigger:'.about',start:S}});
+ gsap.from('.card',{opacity:0,y:30,duration:.6,ease:E,stagger:.08,scrollTrigger:{trigger:'.cards',start:S}});
+ gsap.from('.band-in',{opacity:0,y:40,duration:.8,ease:E,scrollTrigger:{trigger:'.band',start:S}});
+ gsap.from('.review',{opacity:0,scale:.95,duration:.7,ease:E,stagger:.1,scrollTrigger:{trigger:'.reviews',start:S}});
+addEventListener('load',function(){ScrollTrigger.refresh()});
+ if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){ScrollTrigger.refresh()});
+ // seguro: si algo sigue oculto estando ya en pantalla, lo mostramos
+ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var el=e.target;setTimeout(function(){if(+getComputedStyle(el).opacity<.05)gsap.to(el,{opacity:1,x:0,y:0,scale:1,duration:.5,overwrite:'auto'})},1800)}})});
+ document.querySelectorAll('.card,.review,.a-l,.a-r,.band-in').forEach(function(el){io.observe(el)});
+})();
+</script>
+</body>
+</html>
